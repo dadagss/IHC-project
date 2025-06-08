@@ -1,3 +1,4 @@
+/* --- Variáveis CSS --- */
 :root {
     --primary-color: #00C9A7; /* Verde ciano */
     --secondary-color: #008B74;
@@ -6,6 +7,7 @@
     --gray-color: #6c757d;
 }
 
+/* --- Estilos Globais e Resets --- */
 * {
     margin: 0;
     padding: 0;
@@ -20,45 +22,15 @@ body {
     overflow-x: hidden;
 }
 
-.login-container {
-    display: flex;
-    width: 100%;
-}
-
-.login-form {
-    width: 30%;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: white;
-}
-
-.login-image {
-    width: 70%;
-    overflow: hidden; /* Adicionado para conter a imagem */
-    background-color: #1A3E60;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(#0A2640, #1A3E60);
-    
-}
-
-.login-image img {
-    height: 45vh;
-    object-fit: cover; /* Garante que a imagem cubra todo o espaço */
-}
-
-.logo {
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
+/* --- Tipografia e Elementos Básicos --- */
 h2 {
     margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--dark-color);
 }
 
@@ -78,16 +50,57 @@ label {
     font-weight: 500;
 }
 
-input {
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.5rem 0;
+}
+
+/* --- Estilos para Inputs e Select Boxes --- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="search"] { /* Adicionado input[type="search"] para a barra de busca */
     width: 100%;
     padding: 0.8rem 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
     transition: all 0.3s;
+    margin-bottom: 1.5rem; /* Espaço abaixo do input */
+    height: 44px; /* Altura para campos de texto */
 }
 
-input:focus {
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-bottom: 1.5rem; /* Espaço abaixo do select */
+    height: 44px; /* Altura para o select */
+    background-color: white;
+    appearance: none; /* Remove a seta padrão do select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C118.8L146.2%2C259.6L5.4%2C118.8c-2.9-2.9-4.7-6.8-4.7-10.7c0-4%2C1.8-7.9%2C4.7-10.7l19.2-19.2c2.9-2.9%2C6.8-4.7%2C10.7-4.7s7.9%2C1.8%2C10.7%2C4.7L146.2%2C184.8l99.8-99.8c2.9-2.9%2C6.8-4.7%2C10.7-4.7s7.9%2C1.8%2C10.7%2C4.7l19.2%2C19.2c2.9%2C2.9%2C4.7%2C6.8%2C4.7%2C10.7C291.7%2C112%2C289.8%2C115.9%2C287%2C118.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 0.6em auto;
+    padding-right: 2.5rem;
+}
+
+/* Estilos de foco para inputs e select */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="search"]:focus, /* Adicionado para a barra de busca */
+select:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(0, 201, 167, 0.2);
@@ -99,11 +112,23 @@ input:focus {
     margin-bottom: 1.5rem;
 }
 
-.checkbox-group input {
-    width: auto;
-    margin-right: 0.5rem;
+.checkbox-group input[type="checkbox"] { /* Seleciona especificamente o input checkbox dentro de checkbox-group */
+    width: auto; /* Reverte o width: 100% */
+    padding: 0; /* Remove padding */
+    margin-right: 0.5rem; /* Mantém o espaçamento original */
+    height: auto; /* Reverte a altura fixa */
+    border: initial; /* Reverte borda */
+    border-radius: initial; /* Reverte border-radius */
+    transition: none; /* Remove transição */
+    appearance: auto; /* Reverte appearance para mostrar a checkbox padrão */
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    background-image: none; /* Remove background image */
+    background-color: transparent; /* Remove background color */
+    box-shadow: none; /* Remove box-shadow */
 }
 
+/* --- Botões e Links --- */
 .btn-primary-entrar {
     width: 100%;
     padding: 0.8rem;
@@ -120,33 +145,6 @@ input:focus {
 
 .btn-primary-entrar:hover {
     background-color: var(--secondary-color);
-}
-
-.link {
-    display: block;
-    text-align: center;
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-.link:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 1.5rem 0;
-}
-
-.register-text {
-    text-align: center;
-    color: var(--gray-color);
-    margin-bottom: 1rem;
 }
 
 .btn-secondary {
@@ -167,6 +165,74 @@ hr {
     color: white;
 }
 
+.btn-primary-procurar {
+    padding: 0.7rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary-procurar:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-primary-consultar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.btn-primary-consultar:hover {
+    background-color: var(--secondary-color);
+}
+
+.link {
+    display: block;
+    text-align: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.link-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 1rem;
+}
+
+.link-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Componentes Globais (Acessibilidade e Idioma) --- */
 .acessibilidade {
     position: fixed;
     top: 1rem;
@@ -214,26 +280,52 @@ hr {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 992px) {
-    .login-container {
-        flex-direction: column;
-    }
-    
-    .login-form, .login-image {
-        width: 100%;
-    }
-    
-    .login-image {
-        height: 300px;
-    }
+/* --- Layouts de Páginas Específicas --- */
+
+/* --- Tela de Login --- */
+.login-container {
+    display: flex;
+    width: 100%;
 }
 
-@media (max-width: 576px) {
-    .login-form {
-        padding: 2rem;
-    }
+.login-form {
+    width: 30%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
 }
 
+.login-image {
+    width: 70%;
+    overflow: hidden;
+    background-color: #1A3E60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#0A2640, #1A3E60);
+}
+
+.login-image img {
+    height: 45vh;
+    object-fit: cover;
+}
+
+.logo {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.register-text {
+    text-align: center;
+    color: var(--gray-color);
+    margin-bottom: 1rem;
+}
+
+/* --- Tela de Recuperação de Senha --- */
 .recovery-container {
     display: flex;
     width: 100%;
@@ -269,163 +361,10 @@ hr {
     text-align: center;
 }
 
-/* Responsividade para a tela de recuperação */
-@media (max-width: 992px) {
-    .recovery-container {
-        flex-direction: column;
-    }
-    
-    .recovery-form, .recovery-image {
-        width: 100%;
-    }
-    
-    .recovery-image {
-        height: 300px;
-    }
-}
-
-@media (max-width: 576px) {
-    .recovery-form {
-        padding: 2rem;
-    }
-}
-
-.recovery-form input { 
-    margin-bottom: 1.5rem; 
-}
-
+/* --- Tela de Cadastro --- */
 .register-container {
     display: flex;
     width: 100%;
-}
-
-.register-form {
-    width: 30%; /* Mantém a largura do formulário similar ao login */
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Alinha o conteúdo ao topo para formulários longos */
-    background-color: white;
-    /* Adicionado para permitir scroll em formulários muito longos */
-    overflow-y: auto; 
-}
-
-.register-image {
-    width: 70%;
-    overflow: hidden;
-    background-color: #1A3E60;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(#0A2640, #1A3E60);
-}
-
-.register-image img {
-    height: 45vh;
-    object-fit: cover;
-}
-
-.register-form h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--dark-color);
-}
-
-/* Ajuste de responsividade para a tela de cadastro */
-@media (max-width: 992px) {
-    .register-container {
-        flex-direction: column;
-    }
-    
-    .register-form, .register-image {
-        width: 100%;
-    }
-    
-    .register-image {
-        height: 300px;
-    }
-
-    .register-form {
-        max-height: 80vh; /* Limita a altura do formulário para caber na tela */
-    }
-}
-
-@media (max-width: 576px) {
-    .register-form {
-        padding: 2rem;
-    }
-}
-
-/* Estilos para inputs de texto, email, senha, tel, date (inputs "normais") */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="date"] { /* Adicione outros tipos de input aqui se precisar de estilos similares */
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: all 0.3s;
-    margin-bottom: 1.5rem; /* Espaço abaixo do input */
-    height: 44px; /* Altura para campos de texto */
-}
-
-/* Estilos para o selectbox */
-select {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: all 0.3s;
-    margin-bottom: 1.5rem; /* Espaço abaixo do select */
-    height: 44px; /* Altura para o select */
-    background-color: white;
-    appearance: none; /* Remove a seta padrão do select */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C118.8L146.2%2C259.6L5.4%2C118.8c-2.9-2.9-4.7-6.8-4.7-10.7c0-4%2C1.8-7.9%2C4.7-10.7l19.2-19.2c2.9-2.9%2C6.8-4.7%2C10.7-4.7s7.9%2C1.8%2C10.7%2C4.7L146.2%2C184.8l99.8-99.8c2.9-2.9%2C6.8-4.7%2C10.7-4.7s7.9%2C1.8%2C10.7%2C4.7l19.2%2C19.2c2.9%2C2.9%2C4.7%2C6.8%2C4.7%2C10.7C291.7%2C112%2C289.8%2C115.9%2C287%2C118.8z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 0.8rem center;
-    background-size: 0.6em auto;
-    padding-right: 2.5rem;
-}
-
-/* Estilos de foco para inputs e select */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="tel"]:focus,
-input[type="date"]:focus,
-select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(0, 201, 167, 0.2);
-}
-
-/* Garante que o input de checkbox mantenha seu estilo padrão */
-.checkbox-group input[type="checkbox"] { /* Seleciona especificamente o input checkbox dentro de checkbox-group */
-    width: auto; /* Reverte o width: 100% */
-    padding: 0; /* Remove padding */
-    margin-right: 0.5rem; /* Mantém o espaçamento original */
-    height: auto; /* Reverte a altura fixa */
-    border: initial; /* Reverte borda */
-    border-radius: initial; /* Reverte border-radius */
-    transition: none; /* Remove transição */
-    appearance: auto; /* Reverte appearance para mostrar a checkbox padrão */
-    -webkit-appearance: auto;
-    -moz-appearance: auto;
-    background-image: none; /* Remove background image */
-    background-color: transparent; /* Remove background color */
-    box-shadow: none; /* Remove box-shadow */
-}
-
-.register-container {
-    display: flex;
-    width: 100%;
-    /* Removido min-height: 100vh; daqui e movido para body ou outra abordagem */
 }
 
 .register-form {
@@ -435,9 +374,9 @@ select:focus {
     flex-direction: column;
     justify-content: flex-start;
     background-color: white;
-    overflow-y: auto; /* Mantém a barra de rolagem no formulário */
-    max-height: 100vh; /* Ocupa 100% da altura da viewport */
-    flex-grow: 1; /* Permite que o formulário cresça, se necessário */
+    overflow-y: auto;
+    max-height: 100vh;
+    flex-grow: 1;
 }
 
 .register-image {
@@ -448,48 +387,431 @@ select:focus {
     justify-content: center;
     align-items: center;
     background: linear-gradient(#0A2640, #1A3E60);
-    position: sticky; /* Torna a imagem estática */
-    top: 0; /* Fixa no topo da viewport */
-    height: 100vh; /* Ocupa 100% da altura da viewport */
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 .register-image img {
-    height: 45vh; /* Mantém a altura da imagem dentro do container */
+    height: 45vh;
     object-fit: cover;
 }
 
-/* Ajuste do body para garantir que o flexbox funcione corretamente para 100vh */
-body {
-    display: flex;
-    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
-    background-color: var(--light-color);
-    overflow-x: hidden;
-    /* Remover overflow-y: hidden; se existir, para permitir a rolagem do body */
+/* --- Tela de Consultas Médicas --- */
+.appointments-layout {
+    flex-direction: column; /* Aplica flex-direction: column APENAS para o body desta página */
 }
 
-/* Ajuste de responsividade para a tela de cadastro */
+.main-header {
+    background-color: #0B1C2D;
+    color: white;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-left .home-icon {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+}
+
+.header-right .phone-number {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-right .status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: limegreen;
+    align-items: center;
+}
+
+.language-selector.top-left {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+}
+
+.appointments-page-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: var(--light-color);
+}
+
+.search-section {
+    background-color: #1A3E60;
+    width: 100%;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.search-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0; /* Anula o margin-bottom geral para input dentro da search-bar */
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-bar .search-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar .search-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.filter-section {
+    display: flex;
+    gap: 1rem;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.filter-dropdown .dropdown-button {
+    background-color: white;
+    color: var(--dark-color);
+    padding: 0.7rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+}
+
+.filter-dropdown .dropdown-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+}
+
+.filter-dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.1s;
+}
+
+.filter-dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: var(--primary-color);
+}
+
+.filter-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.results-section {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 1rem;
+}
+
+.results-count {
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.doctor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.doctor-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+}
+
+.doctor-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--gray-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.doctor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.doctor-info {
+    flex-grow: 1;
+}
+
+.doctor-info h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+}
+
+.doctor-info p {
+    margin: 0.3rem 0;
+    color: var(--gray-color);
+}
+
+.doctor-info p strong {
+    color: var(--primary-color);
+}
+
+.side-icons {
+    position: fixed;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 999;
+}
+
+.side-icons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--gray-color);
+    transition: all 0.3s;
+}
+
+.side-icons button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- Media Queries (Responsividade) --- */
+
+/* Telas menores que 992px */
 @media (max-width: 992px) {
+    /* Layout de Login */
+    .login-container {
+        flex-direction: column;
+    }
+    .login-form, .login-image {
+        width: 100%;
+    }
+    .login-image {
+        height: 300px;
+    }
+
+    /* Layout de Recuperação de Senha */
+    .recovery-container {
+        flex-direction: column;
+    }
+    .recovery-form, .recovery-image {
+        width: 100%;
+    }
+    .recovery-image {
+        height: 300px;
+    }
+
+    /* Layout de Cadastro */
     .register-container {
         flex-direction: column;
     }
-    
     .register-form, .register-image {
         width: 100%;
-        position: relative; /* Remove sticky em telas menores */
-        height: auto; /* Remove 100vh em telas menores */
-        max-height: none; /* Remove max-height em telas menores */
+        position: relative;
+        height: auto;
+        max-height: none;
     }
-    
     .register-image {
-        height: 300px; /* Volta para a altura fixa em telas menores */
+        height: 300px;
     }
-
     .register-form {
-        max-height: 80vh; /* Mantém este limite para telas menores se necessário */
+        max-height: 80vh; /* Mantém o formulário rolável em telas menores */
     }
 }
 
+/* Telas menores que 768px (principalmente para a página de consultas) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .header-right {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .appointments-page-container {
+        padding: 1rem;
+    }
+
+    .search-section {
+        padding: 2rem 1rem;
+    }
+
+    .search-section h1 {
+        font-size: 2rem;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .filter-dropdown {
+        width: 100%;
+    }
+
+    .filter-dropdown .dropdown-button {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filter-dropdown .dropdown-content {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .btn-primary-procurar {
+        width: 100%;
+    }
+
+    .doctor-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+
+    .doctor-avatar {
+        margin-bottom: 1rem;
+    }
+
+    .doctor-info {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .side-icons {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        bottom: 1rem;
+        top: auto;
+        left: 0;
+        transform: none;
+        padding: 0 1rem;
+    }
+
+    .side-icons button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .language-selector.top-left {
+        top: initial;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 1001;
+    }
+}
+
+/* Telas menores que 576px */
 @media (max-width: 576px) {
+    .login-form,
+    .recovery-form,
     .register-form {
         padding: 2rem;
     }

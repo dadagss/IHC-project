@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Agendamento - Consultas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="appointments_script.js" defer></script>
+    <script src="script.js" defer></script> </head>
+<body class="appointments-layout">
+    <header class="main-header">
+        <div class="header-left">
+            <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="header-right">
+            <span class="phone-number"><i class="fas fa-phone"></i> +55 (61) 9999-9999</span>
+            <div class="status-indicator"></div>
+        </div>
+    </header>
+
+    <div class="language-selector top-left">
+        <button>
+            <i class="fas fa-globe"></i>
+            Português
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    
+    <div class="appointments-page-container">
+        <div class="search-section">
+            <h1>ACHE SEU MÉDICO, <br> E agende sua consulta!</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Ex: Oncologia">
+                <button type="button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-dropdown">
+                <button class="dropdown-button">Localização <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">Todas</a>
+                    <a href="#">Asa Sul</a>
+                    <a href="#">Asa Norte</a>
+                </div>
+            </div>
+            <div class="filter-dropdown">
+                <button class="dropdown-button">Especialidade <i class="fas fa-chevron-down"></i></i class="fas fa-chevron-down"></button>
+                <div class="dropdown-content">
+                    <a href="#">Todas</a>
+                    <a href="#">Cardiologia</a>
+                    <a href="#">Urologia</a>
+                    <a href="#">Oncologia</a>
+                    <a href="#">Otorrinolaringologia</a>
+                </div>
+            </div>
+            <div class="filter-dropdown">
+                <button class="dropdown-button">Convênio <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">Todos</a>
+                    <a href="#">Particular</a>
+                    <a href="#">SulAmérica</a>
+                    <a href="#">Unimed</a>
+                </div>
+            </div>
+            <button class="btn-primary-procurar">Procurar</button>
+        </div>
+
+        <div class="results-section">
+            <p class="results-count">43 resultados:</p>
+            <div class="doctor-list">
+                <div class="doctor-card">
+                    <div class="doctor-avatar" style="background-color: #6c757d;">
+                        <i class="fas fa-user-md" style="color: white; font-size: 3rem;"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Fulana da Silva Barros</h3>
+                        <p>Médica especialista em: <strong>Cardiologia</strong></p>
+                        <p>Atua em: Clínica 306 - Hospital Anchieta</p>
+                    </div>
+                    <button class="btn-primary-consultar">Marcar Consulta</button>
+                </div>
+
+                <div class="doctor-card">
+                    <div class="doctor-avatar" style="background-color: #00C9A7;">
+                        <i class="fas fa-user-md" style="color: white; font-size: 3rem;"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>João Pedro Medeiros Ferreira</h3>
+                        <p>Médico especialista em: <strong>Urologia</strong></p>
+                        <p>Atua em: Clínica 405 - Hospital Anchieta</p>
+                    </div>
+                    <button class="btn-primary-consultar">Marcar Consulta</button>
+                </div>
+
+                <div class="doctor-card">
+                    <div class="doctor-avatar" style="background-color: #d63384;">
+                        <i class="fas fa-user-md" style="color: white; font-size: 3rem;"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Ciclana Souza Matos</h3>
+                        <p>Médica especialista em: <strong>Oncologia</strong></p>
+                        <p>Atua em: Clínica 306 - Hospital Santa Luzia</p>
+                    </div>
+                    <button class="btn-primary-consultar">Marcar Consulta</button>
+                </div>
+
+                <div class="doctor-card">
+                    <div class="doctor-avatar" style="background-color: #007bff;">
+                        <i class="fas fa-user-md" style="color: white; font-size: 3rem;"></i>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Mariazinha Lopes dos Santos</h3>
+                        <p>Médica especialista em: <strong>Otorrinolaringologia</strong></p>
+                        <p>Atua em: Clínica 63 - Hospital Santa Maria</p>
+                    </div>
+                    <button class="btn-primary-consultar">Marcar Consulta</button>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="acessibilidade">
+        <button title="Aumentar fonte"><i class="Aumentar a fonte">+</i></button>
+        <button title="Contraste"><i class="Contraste">🌙</i></button>
+        <button title="Leitor de Tela"><i class="Leitor de tela">🔈</i></button>
+    </div>
+    <div class="side-icons">
+        <button><i class="fas fa-bell"></i></button>
+        <button><i class="fas fa-user-circle"></i></button>
+        <button><i class="fas fa-question-circle"></i></button>
+    </div>
+</body>
+</html>
