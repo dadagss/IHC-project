@@ -233,3 +233,264 @@ hr {
         padding: 2rem;
     }
 }
+
+.recovery-container {
+    display: flex;
+    width: 100%;
+}
+
+.recovery-form {
+    width: 30%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.recovery-image {
+    width: 70%;
+    overflow: hidden;
+    background-color: #1A3E60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#0A2640, #1A3E60);
+}
+
+.recovery-image img {
+    height: 45vh;
+    object-fit: cover;
+}
+
+.recovery-text {
+    margin-bottom: 1.5rem;
+    color: var(--gray-color);
+    text-align: center;
+}
+
+/* Responsividade para a tela de recuperação */
+@media (max-width: 992px) {
+    .recovery-container {
+        flex-direction: column;
+    }
+    
+    .recovery-form, .recovery-image {
+        width: 100%;
+    }
+    
+    .recovery-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .recovery-form {
+        padding: 2rem;
+    }
+}
+
+.recovery-form input { 
+    margin-bottom: 1.5rem; 
+}
+
+.register-container {
+    display: flex;
+    width: 100%;
+}
+
+.register-form {
+    width: 30%; /* Mantém a largura do formulário similar ao login */
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo para formulários longos */
+    background-color: white;
+    /* Adicionado para permitir scroll em formulários muito longos */
+    overflow-y: auto; 
+}
+
+.register-image {
+    width: 70%;
+    overflow: hidden;
+    background-color: #1A3E60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#0A2640, #1A3E60);
+}
+
+.register-image img {
+    height: 45vh;
+    object-fit: cover;
+}
+
+.register-form h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+/* Ajuste de responsividade para a tela de cadastro */
+@media (max-width: 992px) {
+    .register-container {
+        flex-direction: column;
+    }
+    
+    .register-form, .register-image {
+        width: 100%;
+    }
+    
+    .register-image {
+        height: 300px;
+    }
+
+    .register-form {
+        max-height: 80vh; /* Limita a altura do formulário para caber na tela */
+    }
+}
+
+@media (max-width: 576px) {
+    .register-form {
+        padding: 2rem;
+    }
+}
+
+/* Estilos para inputs de texto, email, senha, tel, date (inputs "normais") */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] { /* Adicione outros tipos de input aqui se precisar de estilos similares */
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-bottom: 1.5rem; /* Espaço abaixo do input */
+    height: 44px; /* Altura para campos de texto */
+}
+
+/* Estilos para o selectbox */
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-bottom: 1.5rem; /* Espaço abaixo do select */
+    height: 44px; /* Altura para o select */
+    background-color: white;
+    appearance: none; /* Remove a seta padrão do select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C118.8L146.2%2C259.6L5.4%2C118.8c-2.9-2.9-4.7-6.8-4.7-10.7c0-4%2C1.8-7.9%2C4.7-10.7l19.2-19.2c2.9-2.9%2C6.8-4.7%2C10.7-4.7s7.9%2C1.8%2C10.7%2C4.7L146.2%2C184.8l99.8-99.8c2.9-2.9%2C6.8-4.7%2C10.7-4.7s7.9%2C1.8%2C10.7%2C4.7l19.2%2C19.2c2.9%2C2.9%2C4.7%2C6.8%2C4.7%2C10.7C291.7%2C112%2C289.8%2C115.9%2C287%2C118.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 0.6em auto;
+    padding-right: 2.5rem;
+}
+
+/* Estilos de foco para inputs e select */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 201, 167, 0.2);
+}
+
+/* Garante que o input de checkbox mantenha seu estilo padrão */
+.checkbox-group input[type="checkbox"] { /* Seleciona especificamente o input checkbox dentro de checkbox-group */
+    width: auto; /* Reverte o width: 100% */
+    padding: 0; /* Remove padding */
+    margin-right: 0.5rem; /* Mantém o espaçamento original */
+    height: auto; /* Reverte a altura fixa */
+    border: initial; /* Reverte borda */
+    border-radius: initial; /* Reverte border-radius */
+    transition: none; /* Remove transição */
+    appearance: auto; /* Reverte appearance para mostrar a checkbox padrão */
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    background-image: none; /* Remove background image */
+    background-color: transparent; /* Remove background color */
+    box-shadow: none; /* Remove box-shadow */
+}
+
+.register-container {
+    display: flex;
+    width: 100%;
+    /* Removido min-height: 100vh; daqui e movido para body ou outra abordagem */
+}
+
+.register-form {
+    width: 30%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    overflow-y: auto; /* Mantém a barra de rolagem no formulário */
+    max-height: 100vh; /* Ocupa 100% da altura da viewport */
+    flex-grow: 1; /* Permite que o formulário cresça, se necessário */
+}
+
+.register-image {
+    width: 70%;
+    overflow: hidden;
+    background-color: #1A3E60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#0A2640, #1A3E60);
+    position: sticky; /* Torna a imagem estática */
+    top: 0; /* Fixa no topo da viewport */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+}
+
+.register-image img {
+    height: 45vh; /* Mantém a altura da imagem dentro do container */
+    object-fit: cover;
+}
+
+/* Ajuste do body para garantir que o flexbox funcione corretamente para 100vh */
+body {
+    display: flex;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    background-color: var(--light-color);
+    overflow-x: hidden;
+    /* Remover overflow-y: hidden; se existir, para permitir a rolagem do body */
+}
+
+/* Ajuste de responsividade para a tela de cadastro */
+@media (max-width: 992px) {
+    .register-container {
+        flex-direction: column;
+    }
+    
+    .register-form, .register-image {
+        width: 100%;
+        position: relative; /* Remove sticky em telas menores */
+        height: auto; /* Remove 100vh em telas menores */
+        max-height: none; /* Remove max-height em telas menores */
+    }
+    
+    .register-image {
+        height: 300px; /* Volta para a altura fixa em telas menores */
+    }
+
+    .register-form {
+        max-height: 80vh; /* Mantém este limite para telas menores se necessário */
+    }
+}
+
+@media (max-width: 576px) {
+    .register-form {
+        padding: 2rem;
+    }
+}
